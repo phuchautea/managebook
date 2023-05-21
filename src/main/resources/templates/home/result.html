@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Kết quả</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-md-12">
+                <h4 class="mb-3">Thông tin liên hệ của bạn</h4>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Họ tên: <b><p th:text="${contact.name}"></p></b></li>
+                        <li class="list-group-item">Email: <b><p th:text="${contact.email}"></p></b></li>
+                        <li class="list-group-item">Tin nhắn: <b><p th:text="${contact.message}"></p></b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">Copyright © 2023 Hoàng Phúc Hậu</p>
+    </footer>
+</div>
+</body>
+</html>

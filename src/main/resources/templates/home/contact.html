@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Liên hệ</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-md-12">
+                <h4 class="mb-3">Liên hệ</h4>
+                <form action="#" th:action="@{/contact}" th:object="${contact}" method="POST">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Họ tên</label>
+                            <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="" required="">
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="" required="">
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label">Tin nhắn</label>
+                            <textarea rows="5"  th:field="*{message}" class="form-control" id="message" placeholder="" required=""></textarea>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Gửi thông tin</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">Copyright © 2023 Hoàng Phúc Hậu</p>
+    </footer>
+</div>
+</body>
+</html>

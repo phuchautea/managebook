@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <th:block th:replace="layout :: link-css"></th:block>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="layout :: header"></th:block>
+<div style="text-align: center; margin-top: 10px;">
+    <h1>Hello World!</h1><br>
+    <h4>My name is <b style="color:red">Hoang Phuc Hau</b> - <b style="color:blue">20DTHD3</b></h4><br>
+</div>
+</body>
+</html>
