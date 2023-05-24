@@ -12,16 +12,12 @@
     <main>
         <th:block th:replace="layout :: header"></th:block>
         <div class="py-5 text-center">
-            <h2 th:text=${title}></h2>
+            <h2>Thêm Sách mới</h2>
         </div>
         <div class="row g-5">
             <div class="col-md-12">
                 <form action="#" th:action="@{/books/add}" th:object="${book}" method="POST">
                     <div class="row g-3">
-<!--                        <div class="col-12">-->
-<!--                            <label for="id" class="form-label">Id</label>-->
-<!--                            <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="" required="">-->
-<!--                        </div>-->
                         <div class="col-12">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="">
@@ -43,7 +39,6 @@
                                 <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
                             </select>
                             <span class="text-danger" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></span>
-                            <!--                            <input type="text" th:field="*{category}" class="form-control" id="category" placeholder="" required="">-->
                         </div>
                     </div>
                     <hr class="my-4">

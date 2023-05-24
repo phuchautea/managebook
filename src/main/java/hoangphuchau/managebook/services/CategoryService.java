@@ -1,5 +1,6 @@
 package hoangphuchau.managebook.services;
 
+import hoangphuchau.managebook.entity.Book;
 import hoangphuchau.managebook.entity.Category;
 import hoangphuchau.managebook.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,16 @@ public class CategoryService {
     public Category getCategoryById(Long id) {
         return categoryRepository.findById(id).orElse(null);
     }
-
     public Category saveCategory(Category category) {
         return categoryRepository.save(category);
     }
+    public void addCategory(Category category) {
+        categoryRepository.save(category);
+    }
     public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
+    }
+    public void updateCategory(Category category) {
+        categoryRepository.save(category);
     }
 }

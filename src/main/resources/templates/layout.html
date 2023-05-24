@@ -31,6 +31,8 @@
                     <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="/books" class="nav-link">List Books</a></li>
                     <li class="nav-item"><a href="/books/add" class="nav-link">Add Book</a></li>
+                    <li class="nav-item"><a href="/categories" class="nav-link">List Categories</a></li>
+                    <li class="nav-item"><a href="/categories/add" class="nav-link">Add Category</a></li>
                     <li sec:authorize="isAuthenticated()">
                         <form th:action="@{/logout}" method="POST">
                             <button class="btn btn-outline-danger" type="submit">Logout</button>
