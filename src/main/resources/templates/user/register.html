@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List</title>
+    <th:block th:replace="layout :: link-css"></th:block>
+</head>
+<body>
+<div class="container">
+    <main>
+        <th:block th:replace="layout :: header"></th:block>
+        <div class="py-5 text-center">
+            <h2 th:text=${title}></h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-md-12">
+                <form action="#" th:action="@{/register}" th:object="${user}" method="POST">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                            <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                            <span class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                        </div>
+                        <div class="col-12">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                            <span class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                            <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Tạo tài khoản</button>
+                </form>
+                <br>
+                <a th:href="@{/login}">Đã có tài khoản? Đăng nhập</a>
+            </div>
+        </div>
+    </main>
+    <th:block th:replace="layout :: footer"></th:block>
+</div>
+</body>
+</html>
