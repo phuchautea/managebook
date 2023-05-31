@@ -32,6 +32,6 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    @ValidUserId
+//    @ValidUserId
     private User user;
 }
