@@ -16,21 +16,23 @@
         </div>
         <div class="row g-5">
             <div class="col-md-12">
-                <table class="table">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th sec:authorize="hasAnyAuthority('admin')">Action</th>
-                    </tr>
-                    <tr th:each="category : ${categories}">
-                        <td th:text="${category.id}"></td>
-                        <td th:text="${category.name}"></td>
-                        <td sec:authorize="hasAnyAuthority('admin')">
-                            <a th:href="@{/categories/edit/{id}(id=${category.id})}">Edit</a>
-                            <a th:href="@{/categories/delete/{id}(id=${category.id})}" onclick="return confirm('Are you sure?')">Delete</a>
-                        </td>
-                    </tr>
-                </table>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th sec:authorize="hasAnyAuthority('admin')">Action</th>
+                        </tr>
+                        <tr th:each="category : ${categories}">
+                            <td th:text="${category.id}"></td>
+                            <td th:text="${category.name}"></td>
+                            <td sec:authorize="hasAnyAuthority('admin')">
+                                <a th:href="@{/categories/edit/{id}(id=${category.id})}"><span class="badge bg-primary">Edit</span></a>
+                                <a th:href="@{/categories/delete/{id}(id=${category.id})}" onclick="return confirm('Are you sure?')"><span class="badge bg-danger">Delete</span></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
