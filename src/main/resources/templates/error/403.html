@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403</title>
+    <th:block th:replace="layout :: link-css"></th:block>
+</head>
+<body>
+<div class="container">
+    <main>
+        <th:block th:replace="layout :: header"></th:block>
+        <div class="py-5 text-center">
+            <img class="img-fluid" th:src="@{/images/error.gif}">
+            <p class="alert alert-danger">403 Forbidden: Không có quyền truy cập</p>
+        </div>
+    </main>
+    <th:block th:replace="layout :: footer"></th:block>
+</div>
+</body>
+</html>
